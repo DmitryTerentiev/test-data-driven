@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockService id="acae73f3-be3b-4370-861a-335aab94c43e" port="8088" path="/" host="localhost" name="CurrencyConvertorSoap Virt" outgoingWss="" httpSecure="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting>
+    <con:setting id="acae73f3-be3b-4370-861a-335aab94c43efileName">CurrencyConvertorSoap-Virt</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:constraints>
+    <con:congestion>0</con:congestion>
+    <con:inputBandwidth>-1</con:inputBandwidth>
+    <con:outputBandwidth>-1</con:outputBandwidth>
+    <con:maxThreadPoolCapacity>20</con:maxThreadPoolCapacity>
+    <con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity>
+    <con:virtError>
+      <con:start>0</con:start>
+      <con:endless>true</con:endless>
+    </con:virtError>
+  </con:constraints>
+  <con:dataSources>
+    <con:dataSource>
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>3</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>BOOL</GeneratorType0>
+          <PropertyName0>From</PropertyName0>
+          <repetitionCountFrom>0</repetitionCountFrom>
+          <repeatValuesFrom>false</repeatValuesFrom>
+          <boolViewFrom>Classic</boolViewFrom>
+          <GeneratorType1>BOOL</GeneratorType1>
+          <PropertyName1>Rate</PropertyName1>
+          <repetitionCountRate>0</repetitionCountRate>
+          <repeatValuesRate>false</repeatValuesRate>
+          <boolViewRate>Classic</boolViewRate>
+          <GeneratorType2>CUSTOM</GeneratorType2>
+          <PropertyName2>To</PropertyName2>
+          <repetitionCountTo>0</repetitionCountTo>
+          <repeatValuesTo>false</repeatValuesTo>
+          <CustomStringDataGeneratorFormatTo>%BOOL(True/False)</CustomStringDataGeneratorFormatTo>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:name>DataSource 1</con:name>
+      <con:property>To</con:property>
+      <con:property>From</con:property>
+      <con:property>Rate</con:property>
+    </con:dataSource>
+  </con:dataSources>
+  <con:assertion type="SOAP Request" id="20741ecb-7093-4971-a8e5-5d6e67864696" name="SOAP Request"/>
+  <con:assertion type="WS-A Request Assertion" id="d7af79fb-5c36-4e58-ba00-49c3da2e1482" name="WS-Addressing Request">
+    <con:configuration>
+      <asertWsaAction>true</asertWsaAction>
+      <asertWsaTo>false</asertWsaTo>
+      <assertWsaReplyTo>false</assertWsaReplyTo>
+      <assertWsaMessageId>false</assertWsaMessageId>
+    </con:configuration>
+  </con:assertion>
+  <con:headerValidator type="NONE"/>
+</con:mockService>

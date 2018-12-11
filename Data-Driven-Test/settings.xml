@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="Data Driven Test" id="856c33c9-0c90-47d7-9f3c-84250993e4d1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="856c33c9-0c90-47d7-9f3c-84250993e4d1fileName">Data-Driven-Test</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties>
+    <con:property>
+      <con:name>Test</con:name>
+      <con:value>Test</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="0379c2a0-0b82-4a44-8205-1f3076203b65">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="07285cca-08d6-41d6-b80b-799143413cf8">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testSuite>

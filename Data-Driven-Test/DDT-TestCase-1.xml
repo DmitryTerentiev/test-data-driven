@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DDT TestCase 1" searchProperties="true" id="ec1ebb88-29e5-42de-8a25-e75087a14b73" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>DDT test description</con:description>
+  <con:settings>
+    <con:setting id="GeneratableJUnitReport@Style">Multiple Pages</con:setting>
+    <con:setting id="GeneratableJUnitReport@directory">D:\soapUI-resources\website</con:setting>
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
+    <con:setting id="ec1ebb88-29e5-42de-8a25-e75087a14b73fileName">DDT-TestCase-1</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="request" name="Request" id="a86e4779-e8b5-467d-958b-2b71b9dd2e44">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>CurrencyConvertorSoap</con:interface>
+      <con:operation>ConversionRate</con:operation>
+      <con:request name="Request" id="88a2dcd1-523f-4a21-8852-f3ddc8f40fcb" useWsAddressing="false" useWsReliableMessaging="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://localhost:8088/</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>${DataSource#Name}</web:FromCurrency>
+         <web:ToCurrency>${DataSource#To}</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="c5cecf9e-319b-4de2-a0cf-617f5e651bdd"/>
+        <con:assertion type="XPath Match" id="49621146-481b-44f9-a33f-d6f2df8bbea9">
+          <con:configuration>
+            <path>declare namespace web='http://www.webserviceX.NET/';
+//web:ConversionRateResponse[1]/web:ConversionRateResult[1]</path>
+            <content>${DataSource#Rate}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SOAP Fault Assertion" id="d1e5098f-7077-49a7-86fe-ca94870712ce" name="Not SOAP Fault"/>
+        <con:assertion type="Schema Compliance" id="4d7fbc83-52b5-4066-aa2d-a07681db109f" name="Schema Compliance">
+          <con:configuration>
+            <definition>https://localhost:8088/?WSDL</definition>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" addDefaultAction="false" addDefaultTo="false" generateMessageId="true" action="" to="http://localhost:8088/" from=""/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="0379c2a0-0b82-4a44-8205-1f3076203b65">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="132d10d6-231e-45c8-8502-e6cff5f6e287">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="07285cca-08d6-41d6-b80b-799143413cf8">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource" id="c1d8211f-64c7-4f8f-935a-f0178664405f">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>1</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>SET</GeneratorType0>
+          <PropertyName0>Name</PropertyName0>
+          <repetitionCountName>0</repetitionCountName>
+          <repeatValuesName>false</repeatValuesName>
+          <ValueFromSetIsSequenceValueName>false</ValueFromSetIsSequenceValueName>
+          <ValueFromSetStringsName>Sample 1</ValueFromSetStringsName>
+          <ValueFromSetStringsName>Sample 2</ValueFromSetStringsName>
+          <ValueFromSetStringsName>Sample 3</ValueFromSetStringsName>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:property>Name</con:property>
+      <con:startRow>2</con:startRow>
+      <con:endRow/>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasink" name="DataSink" id="aac938b7-bd13-4f92-87e4-e20e9222cf20">
+    <con:settings/>
+    <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSink type="JDBC">
+        <con:configuration>
+          <driver/>
+          <connstr/>
+          <pass/>
+          <Connection>&lt;None></Connection>
+          <query/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
+      </con:dataSink>
+      <con:properties/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="b81a2219-224b-46f8-a869-89178b2fa6f1">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Request</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasink" name="DataSink2" id="13f1ef8b-c7ed-40f7-ae6b-ddb2b6ddb582">
+    <con:settings/>
+    <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSink type="Data Connection">
+        <con:configuration>
+          <Connection>MySQL( TestEnvironment )</Connection>
+          <query>insert into tutorial(placeid,name) values (?,?);</query>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
+      </con:dataSink>
+      <con:properties>
+        <con:property>
+          <con:name>placeid</con:name>
+          <con:value>${DataSink#prop1}</con:value>
+        </con:property>
+        <con:property>
+          <con:name>name</con:name>
+          <con:value>${DataSink#prop2}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="properties" name="Properties" id="081d58f2-b33f-461a-a30d-5b68951f96e9">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true" createMissingOnLoad="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:properties/>
+    </con:config>
+  </con:testStep>
+  <con:setupScript>//test setup script</con:setupScript>
+  <con:tearDownScript>//test teardown script</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseProperty1</con:name>
+      <con:value>test</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportScript>//test report script</con:reportScript>
+  <con:reportParameters>
+    <con:property>
+      <con:name>test report parameter</con:name>
+      <con:value>test</con:value>
+    </con:property>
+  </con:reportParameters>
+  <con:breakPoints>
+    <con:testStepId>c1d8211f-64c7-4f8f-935a-f0178664405f</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>a86e4779-e8b5-467d-958b-2b71b9dd2e44</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>b81a2219-224b-46f8-a869-89178b2fa6f1</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>aac938b7-bd13-4f92-87e4-e20e9222cf20</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>081d58f2-b33f-461a-a30d-5b68951f96e9</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>13f1ef8b-c7ed-40f7-ae6b-ddb2b6ddb582</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="0379c2a0-0b82-4a44-8205-1f3076203b65">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="07285cca-08d6-41d6-b80b-799143413cf8">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

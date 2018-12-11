@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="DataDrivenVirt" soapui-version="6.0.0" resourceRoot="${projectDir}" id="2e5ad73e-9a96-4b66-a698-b6f109ae2b95" activeEnvironment="TestEnvironment" updated="2.6.0-SNAPSHOT" encryptionMode="Not encrypted" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Description here</con:description>
+  <con:settings>
+    <con:setting id="2e5ad73e-9a96-4b66-a698-b6f109ae2b95fileName">DataDrivenVirt</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:afterLoadScript>//test load script</con:afterLoadScript>
+  <con:beforeSaveScript>//test save script</con:beforeSaveScript>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer>
+    <con:databaseConnection>
+      <con:name>MySQL</con:name>
+      <con:driver>com.mysql.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:mysql://127.0.0.1:3306/sys?user=root&amp;password=PASS_VALUE&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</con:connectionString>
+      <con:password>т77ч654ч</con:password>
+      <con:connectionProperties/>
+    </con:databaseConnection>
+    <con:databaseConnection>
+      <con:name>MSSQL</con:name>
+      <con:driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</con:driver>
+      <con:connectionString>jdbc:sqlserver://127.0.0.1:1433;databaseName=testMSSQL;user=testMSSQL;password=PASS_VALUE</con:connectionString>
+      <con:password>testMSSQL</con:password>
+      <con:connectionProperties/>
+    </con:databaseConnection>
+    <con:databaseConnection>
+      <con:name>Cloudsacpe</con:name>
+      <con:driver>COM.cloudscape.core.JDBCDriver</con:driver>
+      <con:connectionString>jdbc:cloudscape:testCS?user=testCS&amp;password=PASS_VALUE</con:connectionString>
+      <con:password>testCS</con:password>
+      <con:connectionProperties/>
+    </con:databaseConnection>
+  </con:databaseConnectionContainer>
+  <con:jmsConnectionContainer>
+    <con:jmsConnection>
+      <con:name>TestJMS</con:name>
+      <con:connectorLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:initialContextFactory>test.jms.environment</con:initialContextFactory>
+      <con:providerUrl>http://localhost:8088</con:providerUrl>
+      <con:connectionFactory>ConnectionFactoryTest</con:connectionFactory>
+      <con:username>TestJMS</con:username>
+      <con:password>TestJMS</con:password>
+      <con:extraProperties/>
+    </con:jmsConnection>
+  </con:jmsConnectionContainer>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:environment id="132d10d6-231e-45c8-8502-e6cff5f6e287" name="TestEnvironment">
+    <con:service type="SOAP" name="CurrencyConvertorSoap">
+      <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">http://localhost:8088/</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer>
+      <con:databaseConnection>
+        <con:name>MySQL</con:name>
+        <con:driver>com.mysql.jdbc.Driver</con:driver>
+        <con:connectionString>jdbc:mysql://127.0.0.1:3306/sys?user=root&amp;password=PASS_VALUE</con:connectionString>
+        <con:password>т77ч654ч</con:password>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+      <con:databaseConnection>
+        <con:name>MSSQL</con:name>
+        <con:driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</con:driver>
+        <con:connectionString>jdbc:sqlserver://127.0.0.1:1433;databaseName=test;user=test;password=PASS_VALUE</con:connectionString>
+        <con:password>test</con:password>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+      <con:databaseConnection>
+        <con:name>Cloudsacpe</con:name>
+        <con:driver>COM.cloudscape.core.JDBCDriver</con:driver>
+        <con:connectionString>jdbc:cloudscape:testCSinEnv?user=testCSinEnv&amp;password=PASS_VALUE</con:connectionString>
+        <con:password>testCS</con:password>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+    </con:databaseConnectionContainer>
+    <con:jmsConnectionContainer>
+      <con:jmsConnection>
+        <con:name>TestJMS</con:name>
+        <con:connectorLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:initialContextFactory>test.jms.environment</con:initialContextFactory>
+        <con:providerUrl>http://localhost:8088</con:providerUrl>
+        <con:connectionFactory>ConnectionFactoryTest</con:connectionFactory>
+        <con:username>TestJMS</con:username>
+        <con:password>TestJMS</con:password>
+        <con:extraProperties/>
+      </con:jmsConnection>
+    </con:jmsConnectionContainer>
+  </con:environment>
+  <con:environment id="07285cca-08d6-41d6-b80b-799143413cf8" name="TestEmpty">
+    <con:service type="SOAP" name="CurrencyConvertorSoap">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:databaseConnectionContainer>
+      <con:databaseConnection>
+        <con:name>MySQL</con:name>
+        <con:driver/>
+        <con:connectionString xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:password/>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+      <con:databaseConnection>
+        <con:name>MSSQL</con:name>
+        <con:driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</con:driver>
+        <con:connectionString>jdbc:sqlserver://127.0.0.1:1433;databaseName=test;user=test;password=PASS_VALUE</con:connectionString>
+        <con:password>test</con:password>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+      <con:databaseConnection>
+        <con:name>Cloudsacpe</con:name>
+        <con:driver>COM.cloudscape.core.JDBCDriver</con:driver>
+        <con:connectionString>jdbc:cloudscape:testCS?user=testCS&amp;password=PASS_VALUE</con:connectionString>
+        <con:password>testCS</con:password>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+    </con:databaseConnectionContainer>
+    <con:jmsConnectionContainer>
+      <con:jmsConnection>
+        <con:name>TestJMS</con:name>
+        <con:connectorLabel xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:initialContextFactory>test.jms.environment</con:initialContextFactory>
+        <con:providerUrl>http://localhost:8088</con:providerUrl>
+        <con:connectionFactory>ConnectionFactoryTest</con:connectionFactory>
+        <con:username>TestJMS</con:username>
+        <con:password>TestJMS</con:password>
+        <con:extraProperties/>
+      </con:jmsConnection>
+    </con:jmsConnectionContainer>
+  </con:environment>
+  <con:authRepository/>
+  <con:environmentSpec>
+    <con:entry environmentId="0379c2a0-0b82-4a44-8205-1f3076203b65">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="07285cca-08d6-41d6-b80b-799143413cf8">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:tags>
+    <con:tag>
+      <con:id>e9b9783a-ce0a-4554-b49f-18ee5914a07e</con:id>
+      <con:name>TestTag</con:name>
+    </con:tag>
+  </con:tags>
+</con:soapui-project>
